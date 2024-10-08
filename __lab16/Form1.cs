@@ -39,13 +39,14 @@ namespace __lab16
         private void Btn_Calculate_Click(object sender, EventArgs e)
         {
             float height;
-            if (!float.TryParse(rTxtBox_height.Text, out height) || height <= 0) 
+            if (!float.TryParse(rTxtBox_height.Text, out height) || height <= 0)
             {
                 MessageBox.Show("Введите корректную высоту.");
                 return;
             }
             float time;
-            if (!float.TryParse(rTxtBox_time.Text, out time) || time < 0) {
+            if (!float.TryParse(rTxtBox_time.Text, out time) || time < 0)
+            {
                 MessageBox.Show("Введите корректное время.");
                 return;
             }

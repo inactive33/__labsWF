@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace __lab13
 {
@@ -50,7 +50,7 @@ namespace __lab13
             }
             else
             {
-                MessageBox.Show("Ошибка: Введённый email некорректен. Пожалуйста, убедитесь, что email содержит символы '@' и '.', а также не содержит пробелов.", "Ошибка ввода", 
+                MessageBox.Show("Ошибка: Введённый email некорректен. Пожалуйста, убедитесь, что email содержит символы '@' и '.', а также не содержит пробелов.", "Ошибка ввода",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -60,13 +60,14 @@ namespace __lab13
             // Сохраняем email и сообщение в две строки
             using (StreamWriter writer = new StreamWriter(filePath))
             {
-                writer.WriteLine(email);  
-                writer.WriteLine(message);   
+                writer.WriteLine(email);
+                writer.WriteLine(message);
             }
         }
-        private void OpenFile(string filePath) 
+        private void OpenFile(string filePath)
         {
-            using (StreamReader reader = new StreamReader(filePath)) {
+            using (StreamReader reader = new StreamReader(filePath))
+            {
                 string email = reader.ReadLine();
                 string message = reader.ReadToEnd();
 
@@ -78,7 +79,7 @@ namespace __lab13
 
         private void btn_OpenEmail_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog 
+            OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
                 Title = "Открыть сохраненный файл"
@@ -90,7 +91,7 @@ namespace __lab13
                 {
                     OpenFile(openFileDialog1.FileName);
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     MessageBox.Show($"Ошибка при открытии файла: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -106,8 +107,8 @@ namespace __lab13
         }
         private bool IsValidEmail(string email)
         {
-           string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-           return Regex.IsMatch(email, emailPattern);
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, emailPattern);
         }
     }
 }

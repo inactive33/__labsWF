@@ -1,15 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace __lab14
@@ -71,9 +60,12 @@ namespace __lab14
             {
                 methods.BubbleSort(RtxtBox_ArrayText, arrayForBubbleSort);
             }
-            else if (radioButton_InsertSort.Checked) {
+            else if (radioButton_InsertSort.Checked)
+            {
                 methods.InsertSort(RtxtBox_ArrayText, arrayForBubbleSort);
-            } else if (radioButton_ChooseSort.Checked) {
+            }
+            else if (radioButton_ChooseSort.Checked)
+            {
                 methods.SelectSort(RtxtBox_ArrayText, arrayForBubbleSort);
             }
 

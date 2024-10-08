@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace __lab14
@@ -90,7 +86,8 @@ namespace __lab14
                 arrayText.AppendText($"Array[{i}]: {sortedArray[i]} \n");
             }
         }
-        public void InsertSort(RichTextBox arrayText, short[] newArray) {
+        public void InsertSort(RichTextBox arrayText, short[] newArray)
+        {
             short[] sortedArray = search.InsertionSort(newArray);
             arrayText.Clear();
             for (int i = 0; i < sortedArray.Length; i++)
@@ -98,7 +95,7 @@ namespace __lab14
                 arrayText.AppendText($"Array[{i}]: {sortedArray[i]} \n");
             }
         }
-        public void SelectSort(RichTextBox arrayText, short[] newArray) 
+        public void SelectSort(RichTextBox arrayText, short[] newArray)
         {
             short[] sortedArray = search.SelectionSort(newArray);
             // Выводим отсортированный массив в текстовое поле для отладки

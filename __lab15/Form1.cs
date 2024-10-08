@@ -25,14 +25,15 @@ namespace __lab15
                 int result = GenerateRandomNumber(Int32.Parse(rTextBox_minValue.Text), Int32.Parse(rTextBox_maxValue.Text));
                 rTextBox_Output.Text = result.ToString();
             }
-            else if (radioButton2.Checked) {
+            else if (radioButton2.Checked)
+            {
                 rTextBox_Output.Clear();
                 string randomString = GenerateRandomString(Int32.Parse(rTxtBox_length.Text));
                 rTextBox_Output.Text = randomString.ToString();
             }
         }
 
-        private static int GenerateRandomNumber(int minValue, int maxValue) 
+        private static int GenerateRandomNumber(int minValue, int maxValue)
         {
             if (minValue > maxValue) throw new ArgumentOutOfRangeException("minValue должен быть меньше или равно maxValue");
 
